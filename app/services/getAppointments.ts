@@ -12,9 +12,8 @@ async function getAppointments() {
             Authorization: `Bearer ${authToken}`
             }
       });
-      console.log(response)
 
-      return response.data;
+      return response;
 
     } catch (error) {
       console.error('Failed to fetch appointments:', error);
