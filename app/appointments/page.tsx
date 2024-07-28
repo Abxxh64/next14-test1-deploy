@@ -16,7 +16,7 @@ export default function Appointments() {
   useEffect(() => {
     // Fetch appointments from the server
     getAppointments()
-      .then(appointments => setAppointments(appointments || []))
+      .then(appointments => setAppointments(appointments))
       .catch(error => console.error('Failed to fetch appointments:', error));
   }, []);
 
