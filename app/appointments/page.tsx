@@ -16,7 +16,7 @@ export default function Appointments() {
   useEffect(() => {
     // Fetch appointments from the server
     getAppointments()
-      .then(appointments => setAppointments(appointments))
+      .then(appointments => setAppointments(appointments || []))
       .catch(error => console.error('Failed to fetch appointments:', error));
   }, []);
 
@@ -27,7 +27,7 @@ export default function Appointments() {
 
     <Grid container spacing={6} sx={{px: 8, py: 10}}>
 
-      {/* {appointments.length > 0 ? (
+      {appointments.length > 0 ? (
 
         appointments.map((appointment, index) => (
           <AppointmentCard key={index} appointment={appointment} />
@@ -43,7 +43,7 @@ export default function Appointments() {
           </Grid>
       )
 
-      } */}
+      }
 
       {/* {appointments.map((appointment, index) => (
         <AppointmentCard key={index} appointment={appointment}/>))} */}
