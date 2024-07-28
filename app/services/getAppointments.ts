@@ -13,7 +13,7 @@ async function getAppointments() {
             }
       });
 
-      return response.data;
+      return authToken;
 
     } catch (error) {
       console.error('Failed to fetch appointments:', error);
