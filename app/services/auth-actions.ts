@@ -76,7 +76,11 @@ export async function loginUserAction(prevState: any, formData: FormData) {
 
 
 export async function logoutAction() {
-  cookies().set("token", "", { ...config, maxAge: 0 });
+  cookies().set({
+    name: "token",
+    value: "",
+    ...config,
+  });
   redirect("/login");
 }
 
