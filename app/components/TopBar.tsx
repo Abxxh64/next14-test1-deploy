@@ -15,7 +15,6 @@ export default function TopBar(props: {name: string}) {
         </Typography>
         
         <Box component={'form'} action={logoutAction}>
-
         <IconButton
           size="large"
           color="inherit"
