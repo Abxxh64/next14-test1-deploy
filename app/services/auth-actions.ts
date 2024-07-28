@@ -7,11 +7,11 @@ import { redirect } from "next/navigation";
 
 
 const config = {
-  maxAge: 60 * 60 * 24 , 
+  maxAge: 60 * 60 * 24 * 3,  // 3 days 
   path: "/",
-  domain: process.env.HOST ?? "localhost",
-  // httpOnly: true,
-  secure: process.env.NODE_ENV === "production",
+  domain: process.env.NODE_ENV != "development" ? "next14-test1-deploy.vercel.app" : "localhost", 
+  httpOnly: true,
+  secure: process.env.NODE_ENV !== "development",
 };
 
 
@@ -63,6 +63,11 @@ export async function loginUserAction(prevState: any, formData: FormData) {
     }
   
     cookies().set("token", responseData.token);
+    cookies().set({
+      name: "token",
+      value: responseData.token,
+      ...config,
+    });
 
     redirect("/appointments");
 
