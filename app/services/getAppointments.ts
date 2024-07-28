@@ -12,6 +12,7 @@ async function getAppointments() {
             Authorization: `Bearer ${authToken}`
             }
       });
+      console.log(response)
 
       return response.data;
 
