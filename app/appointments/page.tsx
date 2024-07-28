@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import TopBar from '../components/TopBar'
 import AppointmentCard from '../components/AppointmentCard'
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import getAppointments from '../services/getAppointments';
 import { useRouter } from 'next/navigation';
 
@@ -14,11 +14,18 @@ export default function Appointments() {
   const router = useRouter();
 
   useEffect(() => {
-    // Fetch appointments from the server
-    getAppointments()
-      .then(appointments => setAppointments(appointments))
-      .catch(error => console.error('Failed to fetch appointments:', error));
-  }, []);
+    const fetchAppointments = async () => {
+      try {   
+        const fetchedAppointments = await getAppointments();
+        setAppointments(fetchedAppointments);
+      } catch (error) {
+        console.error('Failed to fetch appointments:', error);
+        router.push('/login');
+      }
+    };
+
+    fetchAppointments();
+  }, [router]);
 
 
   return (
@@ -31,7 +38,6 @@ export default function Appointments() {
 
         appointments.map((appointment, index) => (
           <AppointmentCard key={index} appointment={appointment} />
-          // <Paper key={index}></Paper>
         ))
         
       ) : (
@@ -44,10 +50,6 @@ export default function Appointments() {
       )
 
       }
-
-      {/* {appointments.map((appointment, index) => (
-        <AppointmentCard key={index} appointment={appointment}/>))} */}
-
 
     </Grid>
 

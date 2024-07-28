@@ -9,7 +9,7 @@ async function getAppointments() {
 
       const response = await baseApi.get('/appointments', {
         headers: {
-            Authorization: authToken
+            Authorization: `Bearer ${authToken}`
             }
       });
 
