@@ -13,18 +13,8 @@ export default function TopBar(props: {name: string}) {
         <Typography variant="h5" component="h2" sx={{ flexGrow: 1, ml: 2 }}>
           {props.name}
         </Typography>
-        <Box component={'form'} action={logoutAction}>
+        
 
-        <IconButton
-          size="large"
-          color="inherit"
-          aria-label="logout"
-          type="submit"
-          sx={{ mr: 2 }}
-          >
-          <LogoutIcon />
-        </IconButton>
-          </Box>
       </Toolbar>
     </AppBar>
   );
