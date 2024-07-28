@@ -45,8 +45,8 @@ export default function Appointments() {
 
       } */}
 
-      {appointments.map((appointment, index) => (
-        <AppointmentCard key={index} appointment={appointment}/>))}
+      {/* {appointments.map((appointment, index) => (
+        <AppointmentCard key={index} appointment={appointment}/>))} */}
 
 
     </Grid>
