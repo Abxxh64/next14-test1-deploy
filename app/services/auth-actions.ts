@@ -62,7 +62,7 @@ export async function loginUserAction(prevState: any, formData: FormData) {
       };
     }
   
-    cookies().set("token", responseData.token, config);
+    cookies().set("token", responseData.token);
 
     redirect("/appointments");
 
