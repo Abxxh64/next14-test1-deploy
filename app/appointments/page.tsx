@@ -18,8 +18,8 @@ export default function Appointments() {
       try {   
         console.log('Fetching appointments...');
         const fetchedAppointments = await getAppointments();
-        console.log('Fetched response:', fetchedAppointments);
-        // setAppointments(fetchedAppointments);
+        console.log('Fetched appointments:', fetchedAppointments);
+        setAppointments(fetchedAppointments);
       } catch (error) {
         console.error('Failed to fetch appointments:', error);
         router.push('/login');

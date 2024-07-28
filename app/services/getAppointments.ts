@@ -13,7 +13,7 @@ async function getAppointments() {
             }
       });
 
-      return response;
+      return response.data;
 
     } catch (error) {
       console.error('Failed to fetch appointments:', error);
