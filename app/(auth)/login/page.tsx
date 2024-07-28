@@ -50,7 +50,7 @@ export default function Login() {
             name='email'
             autoFocus
             />
-            <Box height={2}>
+            <Box height={2} pl={1}>
               <ZodErrors error={formState?.zodErrors?.email} />
             </Box>
          
@@ -77,7 +77,7 @@ export default function Login() {
             }}
           />
           
-          <Box height={2}>
+          <Box height={2} pl={1}>
               <ZodErrors error={formState?.zodErrors?.password} />
           </Box>
           
