@@ -62,7 +62,6 @@ export async function loginUserAction(prevState: any, formData: FormData) {
       };
     }
   
-    cookies().set("token", responseData.token);
     cookies().set({
       name: "token",
       value: responseData.token,
