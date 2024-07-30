@@ -38,7 +38,7 @@ export default function Appointments() {
     <Grid container spacing={6} sx={{px: 8, py: 10}}>
 
       {loading ? (
-          <Grid item lg={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+          <Grid item xs={12} display={'flex'} alignItems={'center'} justifyContent={'center'}>
             <CircularProgress/>
             <Typography ml={1}>Fetching Appointments</Typography>
           </Grid>
