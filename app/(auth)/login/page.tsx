@@ -37,7 +37,7 @@ export default function Login() {
     
       <Paper elevation={3} sx={{ p: 3, pb: 5, width: "100%", display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <img src="/pixil-logo.png" />
+          <img src="/pixil-logo.png" alt='pixil logo'/>
         </Box>
 
           <Typography variant="body2" fontStyle={'italic'} color={'error'} gutterBottom>{formState?.apiErrors}</Typography>

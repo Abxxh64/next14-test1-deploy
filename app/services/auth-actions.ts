@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 const config = {
   maxAge: 60 * 60 * 24 * 3,  // 3 days 
   path: "/",
-  domain: process.env.NODE_ENV != "development" ? "next14-test1-deploy.vercel.app" : "localhost", 
+  domain: process.env.NODE_ENV === "development" || process.env.LOCAL_PRODUCTION ? "localhost" : "next14-test1-deploy.vercel.app",
   httpOnly: true,
   secure: process.env.NODE_ENV !== "development",
 };
